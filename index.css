@@ -109,14 +109,23 @@ body {
 @media (max-width: 600px) {
   .carousel {
     overflow-x: hidden;
-    padding: 1rem 0.5rem;
+    padding: 0;
   }
 
   .testimonial-text {
     font-size: 0.95rem;
   }
 
+   .testimonial-card {
+    padding: 1rem;
+    max-width: 100%;
+     box-sizing: border-box;
+  }
+
   .carousel-nav {
+    position: static;
+    margin-top: 1rem;
+    justify-content: center;
     left: 0.5rem;
     right: 0.5rem;
   }
@@ -124,5 +133,6 @@ body {
   .carousel-nav button {
     padding: 0.4rem 0.6rem;
     font-size: 1rem;
+    box-shadow: none;
   }
 }
