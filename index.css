@@ -27,6 +27,7 @@ body {
   background-color: white;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   position: relative;
+  overflow: hidden;
 }
 
 .quote-icon {
@@ -57,7 +58,7 @@ body {
   justify-content: space-between;
   align-items: center;
   transform: translateY(-50%);
-  pointer-events: none;
+  pointer-events: none; /* disables hover/blocking on the wrapper */
 }
 
 .carousel-nav button {
@@ -71,10 +72,18 @@ body {
   color: #6b7280;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
+  pointer-events: all;
 }
 
 .carousel-nav button:hover {
   transform: scale(1.1);
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-color-index:0) {
+  .carousel-nav button {
+    -webkit-appearance: none;
+    appearance: none;
+  }
 }
 
 .carousel-dots {
