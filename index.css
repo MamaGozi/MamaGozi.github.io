@@ -21,7 +21,7 @@ body {
 .testimonial-card {
   text-align: center;
   width: 90%;
-  max-width: 600px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 1rem 3rem;
   border-radius: 1rem;
@@ -104,4 +104,25 @@ body {
 
 .dot.active {
   background-color: #6A1B9A;
+}
+
+@media (max-width: 600px) {
+  .carousel {
+    overflow-x: hidden;
+    padding: 1rem 0.5rem;
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+  }
+
+  .carousel-nav {
+    left: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .carousel-nav button {
+    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
+  }
 }
