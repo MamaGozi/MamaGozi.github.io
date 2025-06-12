@@ -8,6 +8,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .carousel {
@@ -20,7 +21,7 @@ body {
 .testimonial-card {
   text-align: center;
   width: 90%;
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 2rem;
   border-radius: 1rem;
