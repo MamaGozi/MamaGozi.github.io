@@ -1,20 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Testimonial Carousel</title>
-    <link rel="stylesheet" href="./index.css" />
-  </head>
-  <body>
-    <div id="root"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonial Carousel</title>
+  <link rel="stylesheet" href="index.css" />
 
-    <!-- React and Babel for development/testing only -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- React + Babel (for development use only) -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
 
-    <!-- Main App Script -->
-    <script type="text/babel" src="./index.js"></script>
-  </body>
+  <script type="text/babel">
+    const testimonials = [
+      {
+        quote:
+          "Game-changer for our business. The integration was smooth, the features are robust, and the support team is always there when you need them.",
+        name: "Anonymous Customer",
+      },
+      {
+        quote:
+          "We've tried several solutions, but nothing comes close to this level of reliability and ease of use. It's become an essential part of our workflow.",
+        name: "Anonymous Customer",
+      },
+    ];
+
+    function TestimonialCarousel() {
+      const [index, setIndex] = React.useState(0);
+
+      React.useEffect(() => {
+        const interval = setInterval(() => {
+          setIndex((prev) => (prev + 1) % testimonials.length);
+        }, 5000);
+        return () => clearInterval(interval);
+      }, []);
+
+      const handleNext = () =>
+        setIndex((prev) => (prev + 1) % testimonials.length);
+      const handlePrev = () =>
+        setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+
+      return (
+        <div className="carousel">
+          <div className="testimonial-card">
+            <div className="quote-icon">❝</div>
+            <p className="testimonial-text">"{testimonials[index].quote}"</p>
+            <p className="testimonial-author">— {testimonials[index].name}</p>
+            <div className="carousel-nav">
+              <button onClick={handlePrev}>‹</button>
+              <button onClick={handleNext}>›</button>
+            </div>
+            <div className="carousel-dots">
+              {testimonials.map((_, i) => (
+                <span key={i} className={i === index ? "dot active" : "dot"}></span>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<TestimonialCarousel />);
+  </script>
+</body>
 </html>
