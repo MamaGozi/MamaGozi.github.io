@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Testimonial Carousel</title>
-  <link rel="stylesheet" href="index.css" />
-
-  <!-- React + Babel (for development use only) -->
+  <link rel="stylesheet" href="./index.css" />
   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -16,7 +14,7 @@
 
   <script type="text/babel">
     const testimonials = [
-       {
+      {
         quote:
           "Ms. U helped me structure my lessons more effectively and use data to inform instruction. Because of her support, I now feel more confident in meeting the needs of all my students and making real-time instructional adjustments. She is knowledgeable, encouraging, and deeply committed to teacher growth.",
         name: "Mrs. M, High School Math Teacher, 2024 - 2025"
@@ -55,7 +53,7 @@
         quote:
           "I truly loved working with you, Ms. U. Your positive personality was the best to work with.",
         name: "Ms. O'Neil, ELA 6 Teacher, 2024 - 2025"
-      },
+      }
     ];
 
     function TestimonialCarousel() {
@@ -64,14 +62,12 @@
       React.useEffect(() => {
         const interval = setInterval(() => {
           setIndex((prev) => (prev + 1) % testimonials.length);
-        }, 5000);
+        }, 8000);
         return () => clearInterval(interval);
       }, []);
 
-      const handleNext = () =>
-        setIndex((prev) => (prev + 1) % testimonials.length);
-      const handlePrev = () =>
-        setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+      const handleNext = () => setIndex((prev) => (prev + 1) % testimonials.length);
+      const handlePrev = () => setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
       return (
         <div className="carousel">
