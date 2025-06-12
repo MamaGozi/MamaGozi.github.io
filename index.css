@@ -23,7 +23,7 @@ body {
   width: 90%;
   max-width: 600px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   border-radius: 1rem;
   background-color: white;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
@@ -53,8 +53,8 @@ body {
 .carousel-nav {
   position: absolute;
   top: 50%;
-  left: -.6rem;
-  right: -.6rem;
+  left: -.3rem;
+  right: -.3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
