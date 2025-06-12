@@ -110,16 +110,18 @@ body {
   .carousel {
     overflow-x: hidden;
     padding: 0;
+    margin: 0;
   }
 
   .testimonial-text {
     font-size: 0.95rem;
   }
 
-   .testimonial-card {
+  .testimonial-card {
     padding: 1rem;
     max-width: 100%;
-     box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .carousel-nav {
