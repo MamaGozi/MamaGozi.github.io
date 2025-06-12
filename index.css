@@ -52,8 +52,8 @@ body {
 .carousel-nav {
   position: absolute;
   top: 50%;
-  left: -2rem;
-  right: -2rem;
+  left: .5rem;
+  right: .5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
